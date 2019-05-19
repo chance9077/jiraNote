@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "note",
+  "version": "1.0",
+  "description": "快速补齐工作日志",
+  "icons": {
+    "16": "icon/icon.png",
+    "32": "icon/icon.png",
+    "128": "icon/icon.png"
+  },
+  "page_action": {
+    "default_icon": "icon/icon.png",
+    "default_title": "快速补齐工作日志"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://jira.up366.com:8080/browse/*"],
+      "js": ["js/content.js"],
+      "css": ["css/note.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "webRequest",
+    "notifications"
+  ]
+}
