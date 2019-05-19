@@ -53,7 +53,7 @@
     const list = $('#log-work')
     const li = document.createElement('li')
     li.className = 'aui-list-item'
-    li.innerHTML = `<a id="auto-note" class="aui-list-item-link " title="补齐日志" href="javascript:void(0)">补齐日志</a>`
+    li.innerHTML = `<a id="auto-note" class="aui-list-item-link " title="补写日志" href="javascript:void(0)">补写日志</a>`
     list.parentElement.parentElement.appendChild(li)
     li.addEventListener('click', handle)
 
@@ -61,7 +61,7 @@
     if (!canNotification) {
       const tip = document.createElement('div')
       tip.className = 'add-note-tip hide'
-      tip.innerHTML = `已经添加 <span id="tip-cur">0</span> 条日志，共 <span id="tip-count">0</span> 条日志`
+      tip.innerHTML = `<i class="add-loading"></i>已经添加 <span id="tip-cur">0</span> 条日志，共 <span id="tip-count">0</span> 条日志`
       document.body.appendChild(tip) 
     }
   }
@@ -73,6 +73,7 @@
     if (comment && ds) {
       const days = ds.match(/\d+/g)
       count = days.length
+      cur = 0
       write(comment, ...days)
     } else {
       alert('参数错误')
@@ -94,7 +95,12 @@
   }
 
   // 请求接口
-  function write(commit, ...ds) {
+  /**
+   * 
+   * @param {String} comment 日志
+   * @param  {Array} ds 日期
+   */
+  function write(comment, ...ds) {
     // 获取提示接口
     const notify = tip()
     let $ = select => document.querySelector(select)
@@ -138,8 +144,7 @@
       submit(atl_token, id, days[i++])
       if (i == days.length) {
         clearInterval(interval)
-        cur = 0
-        count = 0
+        location.reload()
       }
     }, 3000)
   }
