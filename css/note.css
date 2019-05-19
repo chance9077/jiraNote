@@ -1,0 +1,22 @@
+.add-note-tip {
+  width: auto;
+  height: 20px;
+  position: absolute;
+  left: 20px;
+  border-radius: 5px;
+  background-color: black;
+  opacity: .8;
+  padding: 6px 10px;
+  color: white;
+  transition: all .25s ease-in;
+}
+.add-note-tip.hide {
+  top: -40px;
+}
+.add-note-tip.show {
+  top: 15px;
+}
+.add-note-tip span {
+  color: red;
+  font-weight: bold;
+}

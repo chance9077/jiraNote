@@ -14,7 +14,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://jira.up366.com:8080/browse/*"],
+      "matches": ["<all_urls>"],
       "js": ["js/content.js"],
       "css": ["css/note.css"],
       "run_at": "document_idle"
