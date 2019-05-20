@@ -144,7 +144,10 @@
       submit(atl_token, id, days[i++])
       if (i == days.length) {
         clearInterval(interval)
-        location.reload()
+        // location.reload()
+        setTimeout(() => {
+          location.search = '?page=com.atlassian.jira.plugin.system.issuetabpanels:worklog-tabpanel'
+        }, 800)
       }
     }, 3000)
   }
