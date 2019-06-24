@@ -1,0 +1,42 @@
+.add-note-tip {
+  width: auto;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  background-color: black;
+  opacity: .8;
+  padding: 6px 10px;
+  color: white;
+  z-index: 9999;
+  transition: all .25s ease-in;
+}
+.add-note-tip.hide {
+  top: -40px;
+}
+.add-note-tip.show {
+  top: 40px;
+}
+.add-note-tip span {
+  color: red;
+  font-weight: bold;
+}
+.add-loading {
+  display: inline-block;
+  border: 3px solid hsla(185, 100%, 62%, 0.2);
+  border-top-color: #3cefff;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  position: relative; 
+  top: 2px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

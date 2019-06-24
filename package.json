@@ -1,0 +1,33 @@
+{
+  "name": "jiranote",
+  "version": "1.0.0",
+  "description": "快速补写工作日志",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode=development --watch",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chance9077/jiraNote.git"
+  },
+  "keywords": [
+    "jira",
+    "note"
+  ],
+  "author": "chance9077",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chance9077/jiraNote/issues"
+  },
+  "homepage": "https://github.com/chance9077/jiraNote#readme",
+  "dependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.3",
+    "css-loader": "^3.0.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.5"
+  }
+}
