@@ -2,16 +2,16 @@
   "manifest_version": 2,
   "name": "note",
   "version": "1.0",
-  "description": "快速补齐工作日志",
+  "description": "快速补写工作日志",
   "icons": {
-    "16": "icon/icon_16.png",
-    "32": "icon/icon_32.png",
-    "48": "icon/icon_48.png",
-    "64": "icon/icon_64.png",
-    "128": "icon/icon_128.png"
+    "16": "images/icon_16.png",
+    "32": "images/icon_32.png",
+    "48": "images/icon_48.png",
+    "64": "images/icon_64.png",
+    "128": "images/icon_128.png"
   },
   "page_action": {
-    "default_icon": "icon/icon_16.png",
+    "default_icon": "images/icon_16.png",
     "default_title": "快速补齐工作日志"
   },
   "content_scripts": [

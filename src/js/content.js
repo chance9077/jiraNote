@@ -1,4 +1,4 @@
-(function() {
+export function run() {
   let canNotification = false
 
   let cur = 0, count = 0
@@ -151,4 +151,4 @@
       }
     }, 3000)
   }
-})();
+}

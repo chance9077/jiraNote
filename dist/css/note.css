@@ -1,4 +1,4 @@
-.add-note-tip {
+/* .add-note-tip {
   width: auto;
   height: 20px;
   position: absolute;
@@ -39,4 +39,36 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.note-main {
+  min-height: 500px;
+}
+
+.selection-date {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.selection-date div {
+  flex-basis: 60px;
+  height: 60px;
+  background: rgba(66, 68, 90, 0.075);
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+.selection-date div.selected {
+  background-color: #7febc2;
+}
+.selection {
+  background: rgba(0, 0, 255, 0.1);
+  border-radius: 0.1em;
+  border: 0.05em solid rgba(0, 0, 255, 0.2);
+}
+.date-header {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid rgba(66, 68, 90, 0.075);
+  margin: 5px 0;
+  padding-top: 5px;
 }

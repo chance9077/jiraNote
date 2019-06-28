@@ -3,7 +3,7 @@ const CopyPlugin = require('copy-webpack-plugin')
 const CleanPlugin = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-module.exports = {
+const config = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -25,8 +25,6 @@ module.exports = {
   },
 
   plugins: [
-    // new ExtractTextPlugin('note.css'),
-    new CleanPlugin.CleanWebpackPlugin(),
     new CopyPlugin([
       {
         from: path.resolve(__dirname, './src/images'),
@@ -41,4 +39,12 @@ module.exports = {
       filename: 'css/note.css'
     })
   ]
+}
+
+module.exports = env => {
+
+  if (env.production) {
+    config.plugins.push(new CleanPlugin.CleanWebpackPlugin())
+  }
+  return config
 }
