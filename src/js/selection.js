@@ -2,7 +2,7 @@ import Selection from '@simonwep/selection-js'
 
 export let selection
 
-export function init() {
+export function initSelection() {
   // console.log(document.querySelector('.selection-date'))
   selection = Selection.create({
     class: 'selection',
@@ -15,22 +15,21 @@ export function init() {
       originalEvent,
       selectedElements
     }) {
-
-      const selected = target.classList.contains('selected');
+      const selected = target.classList.contains('selected')
       if (!originalEvent.ctrlKey && !originalEvent.metaKey) {
 
         for (const el of selectedElements) {
-          el.classList.remove('selected');
+          el.classList.remove('selected')
         }
-        this.clearSelection();
+        this.clearSelection()
       }
 
       if (!selected) {
-        target.classList.add('selected');
-        this.keepSelection();
+        target.classList.add('selected')
+        this.keepSelection()
       } else {
-        target.classList.remove('selected');
-        this.removeFromSelection(target);
+        target.classList.remove('selected')
+        this.removeFromSelection(target)
       }
     },
 
@@ -40,9 +39,9 @@ export function init() {
     }) {
       if (!originalEvent.ctrlKey && !originalEvent.metaKey) {
         for (const el of selectedElements) {
-          el.classList.remove('selected');
+          el.classList.remove('selected')
         }
-        this.clearSelection();
+        this.clearSelection()
       }
     },
 
@@ -53,15 +52,20 @@ export function init() {
       }
     }) {
       for (const el of selectedElements) {
-        el.classList.add('selected');
+        el.classList.add('selected')
       }
       for (const el of removed) {
-        el.classList.remove('selected');
+        el.classList.remove('selected')
       }
     },
 
     onStop() {
-      this.keepSelection();
+      this.keepSelection()
+    },
+
+    selectionFilter(evt) {
+      let el = evt.element
+      return el.getAttribute('data-number')
     }
   })
 }
