@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const config = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'note'),
     filename: 'main.js',
   },
   
@@ -28,11 +28,11 @@ const config = {
     new CopyPlugin([
       {
         from: path.resolve(__dirname, './src/images'),
-        to: path.resolve(__dirname, './dist/images')
+        to: path.resolve(__dirname, './note/images')
       },
       {
         from: path.resolve(__dirname, './src/manifest.json'),
-        to: path.resolve(__dirname, './dist')
+        to: path.resolve(__dirname, './note')
       }
     ]),
     new MiniCssExtractPlugin({

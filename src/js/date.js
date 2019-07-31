@@ -9,9 +9,13 @@ function firstDay() {
 }
 
 const daysCount = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][new Date().getMonth()]
+const M = ['一','二','三','四','五','六','七','八','九','十','十一','十二'][new Date().getMonth()] + '月'
+const Y = 19
 
 export const calendar = {
   index: firstDay(),
   count: daysCount,
-  curDay: new Date().getDate()
+  curDay: new Date().getDate(),
+  M,
+  Y
 }

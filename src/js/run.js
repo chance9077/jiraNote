@@ -1,6 +1,7 @@
 import Swal from 'sweetalert2'
 import { initSelection, selection } from './selection.js'
 import { calendar } from './date.js'
+import { write } from './write.js'
 
 const month = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'][new Date().getMonth()]
 
@@ -69,6 +70,7 @@ const opt = {
       <div></div>
       <div></div>
       </div>
+      <div style="font-size: 14px">单击选中日期，按住鼠标左键拖动多选，按住 Ctrl 单击多选，按住 Shift 单击连续多选</div>
       <div class="input-container" style="display: none;">
         <input class="note-input swal2-input" placeholder="你想记录什么呢？" type="text">
 
@@ -103,13 +105,15 @@ function open() {
         if (comment) {
           input.value = comment
         } else if (defaultComment) {
-          // input.value = defaultComment
           input.value = ''
           input.setAttribute('placeholder', defaultComment)
         } else {
           input.value = ''
         }
         inputEl.style.display = 'flex'
+        setTimeout(() => {
+          input.focus()
+        }, 100);
         curClickELe = e.target
       }
     }
@@ -165,7 +169,7 @@ function getList() {
 }
 
 function run() {
-  console.log(getList())
+  write(getList(), calendar.Y, calendar.M)
 }
 
 export default function() {

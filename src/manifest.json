@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "note",
-  "version": "1.0",
+  "version": "1.2",
   "description": "快速补写工作日志",
   "icons": {
     "16": "images/icon_16.png",
